@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = bitcoin-qt
+TARGET = litecoin-qt
 VERSION = 0.8.1
 INCLUDEPATH += src src/json src/qt
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
@@ -199,6 +199,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/allocators.h \
     src/ui_interface.h \
     src/qt/rpcconsole.h \
+    src/scrypt.h \
     src/version.h \
     src/netbase.h \
     src/clientversion.h \
@@ -266,6 +267,7 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/notificator.cpp \
     src/qt/qtipcserver.cpp \
     src/qt/rpcconsole.cpp \
+    src/scrypt.c \
     src/noui.cpp \
     src/leveldb.cpp \
     src/txdb.cpp
@@ -298,7 +300,7 @@ SOURCES += src/qt/test/test_main.cpp \
 HEADERS += src/qt/test/uritests.h
 DEPENDPATH += src/qt/test
 QT += testlib
-TARGET = bitcoin-qt_test
+TARGET = litecoin-qt_test
 DEFINES += BITCOIN_QT_TEST
 }
 
@@ -381,7 +383,7 @@ macx:OBJECTIVE_SOURCES += src/qt/macdockiconhandler.mm
 macx:LIBS += -framework Foundation -framework ApplicationServices -framework AppKit
 macx:DEFINES += MAC_OSX MSG_NOSIGNAL=0
 macx:ICON = src/qt/res/icons/bitcoin.icns
-macx:TARGET = "Bitcoin-Qt"
+macx:TARGET = "Litecoin-Qt"
 macx:QMAKE_CFLAGS_THREAD += -pthread
 macx:QMAKE_LFLAGS_THREAD += -pthread
 macx:QMAKE_CXXFLAGS_THREAD += -pthread
